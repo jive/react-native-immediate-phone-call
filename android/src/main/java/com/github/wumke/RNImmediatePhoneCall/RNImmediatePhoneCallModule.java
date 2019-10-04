@@ -41,8 +41,8 @@ public class RNImmediatePhoneCallModule extends ReactContextBaseJavaModule {
             return;
         }
 
+        String url = "tel:" + number;
         try {
-            String url = "tel:" + number;
             Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(url).normalizeScheme());
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             currentActivity.startActivity(intent);
