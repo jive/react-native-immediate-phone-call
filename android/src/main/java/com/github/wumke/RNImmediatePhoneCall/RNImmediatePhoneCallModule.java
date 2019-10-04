@@ -45,10 +45,10 @@ public class RNImmediatePhoneCallModule extends ReactContextBaseJavaModule {
             String url = "tel:" + number;
             Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(url).normalizeScheme());
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            activity.startActivity(intent);
+            currentActivity.startActivity(intent);
             promise.resolve("success");
         } catch(Exception e) {
-            promise.reject(new JSApplicationIllegalArgumentException("Could not open URL '" + number + "': " + e.getMessage()));
+            promise.reject(new JSApplicationIllegalArgumentException("Could not open URL '" + url + "': " + e.getMessage()));
         }
     }
 }
