@@ -13,7 +13,7 @@ var RNImmediatePhoneCall = {
         if(!permission) {
           let granted = await requestCallPermission(title, message, buttonNegative, buttonPositive);
           if (granted) {
-            return NativeModules.RNImmediatePhoneCall.immediatePhoneCall("411");
+            return NativeModules.RNImmediatePhoneCall.immediatePhoneCall(number);
           }
           return Promise.reject("Permission not granted");
         }
@@ -21,7 +21,7 @@ var RNImmediatePhoneCall = {
         return Promise.reject(e);
       }
     }
-    return NativeModules.RNImmediatePhoneCall.immediatePhoneCall("411");
+    return NativeModules.RNImmediatePhoneCall.immediatePhoneCall(number);
   }
 };
 
