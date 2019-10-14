@@ -6,19 +6,24 @@ const defaultTitle = "Request Camera Permission";
 const defaultMessage = "Grant access to enable calling your phone";
 
 var RNImmediatePhoneCall = {
-  immediatePhoneCall: async function(number, title = defaultTitle, message = defaultMessage, buttonNegative = 'Cancel', buttonPositive = 'OK') {
+  immediatePhoneCall: async function(number, checkPermissions = true, title = defaultTitle, message = defaultMessage, buttonNegative = 'Cancel', buttonPositive = 'OK') {
     if (isAndroid) {
-      try {
-        let permission = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CALL_PHONE);
-        if(!permission) {
-          let granted = await requestCallPermission(title, message, buttonNegative, buttonPositive);
-          if (granted) {
-            return NativeModules.RNImmediatePhoneCall.immediatePhoneCall(number);
+      if (checkPermissions) {
+        try {
+        
+          let permission = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.CALL_PHONE);
+          if(!permission) {
+            let granted = await requestCallPermission(title, message, buttonNegative, buttonPositive);
+            if (granted) {
+              return NativeModules.RNImmediatePhoneCall.immediatePhoneCall(number);
+            }
+            return Promise.reject("Permission not granted");
           }
-          return Promise.reject("Permission not granted");
+        } catch (e) {
+          return Promise.reject(e);
         }
-      } catch (e) {
-        return Promise.reject(e);
+      } else {
+        return NativeModules.RNImmediatePhoneCall.immediatePhoneCall(number);
       }
     }
     return NativeModules.RNImmediatePhoneCall.immediatePhoneCall(number);
