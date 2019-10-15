@@ -2,7 +2,7 @@ import {NativeModules, Platform, PermissionsAndroid} from 'react-native';
 
 const isAndroid = Platform.OS === 'android';
 
-const defaultTitle = "Request Camera Permission";
+const defaultTitle = "Request Phone Permission";
 const defaultMessage = "Grant access to enable calling your phone";
 
 var RNImmediatePhoneCall = {
