@@ -35,10 +35,4 @@ public class RNImmediatePhoneCallPackage implements ReactPackage {
             ReactApplicationContext reactContext) {
         return Collections.emptyList();
     }
-	
-	public static void onRequestPermissionsResult(int requestCode, @NonNull String permissions[],
-                                                  @NonNull int[] grantResults) {
-        RNImmediatePhoneCallModule.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-
 }
