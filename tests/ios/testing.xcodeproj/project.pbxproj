@@ -13,7 +13,7 @@
 		4FAA011622AEF140005DC98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAA011522AEF140005DC98E /* Assets.xcassets */; };
 		4FAA011922AEF140005DC98E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAA011722AEF140005DC98E /* LaunchScreen.storyboard */; };
 		4FAA012422AEF140005DC98E /* testingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAA012322AEF140005DC98E /* testingTests.swift */; };
-		FAEF7F0D0B62EE004B1D008E /* Pods_testing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7247DA180461B16D589906C /* Pods_testing.framework */; };
+		8694869B588D7BCC801B0ADF /* libPods-testing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34527DBA7ED1ED25B232A4B8 /* libPods-testing.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34527DBA7ED1ED25B232A4B8 /* libPods-testing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F03187C23E35BFF00CC4FFB /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = package.json; path = ../../package.json; sourceTree = "<group>"; };
 		4F2CB70B23E3481A00804A90 /* RNImmediatePhoneCall.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = RNImmediatePhoneCall.podspec; path = ../../RNImmediatePhoneCall.podspec; sourceTree = "<group>"; };
 		4F4D18DB234292A0000871DE /* RNImmediatePhoneCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNImmediatePhoneCall.m; sourceTree = "<group>"; };
 		4FAA010B22AEF13E005DC98E /* testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,7 +42,6 @@
 		4FAA012322AEF140005DC98E /* testingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testingTests.swift; sourceTree = "<group>"; };
 		4FAA012522AEF140005DC98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6490E23BD4ABCFA52DA345F7 /* Pods-testing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing.release.xcconfig"; path = "Target Support Files/Pods-testing/Pods-testing.release.xcconfig"; sourceTree = "<group>"; };
-		C7247DA180461B16D589906C /* Pods_testing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE43FAE575CAF1781AEFFEBF /* Pods-testing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing.debug.xcconfig"; path = "Target Support Files/Pods-testing/Pods-testing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEF7F0D0B62EE004B1D008E /* Pods_testing.framework in Frameworks */,
+				8694869B588D7BCC801B0ADF /* libPods-testing.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +76,7 @@
 		4FAA010222AEF13D005DC98E = {
 			isa = PBXGroup;
 			children = (
+				4F03187C23E35BFF00CC4FFB /* package.json */,
 				4F2CB70B23E3481A00804A90 /* RNImmediatePhoneCall.podspec */,
 				4F4D18DA234292A0000871DE /* RNImmediatePhoneCall */,
 				4FAA010D22AEF13E005DC98E /* testing */,
@@ -130,7 +132,7 @@
 		CEEF047063A63C63B5812606 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C7247DA180461B16D589906C /* Pods_testing.framework */,
+				34527DBA7ED1ED25B232A4B8 /* libPods-testing.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,7 +148,6 @@
 				4FAA010722AEF13E005DC98E /* Sources */,
 				4FAA010822AEF13E005DC98E /* Frameworks */,
 				4FAA010922AEF13E005DC98E /* Resources */,
-				6F236D2FE3892A42328CB825 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,21 +235,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F236D2FE3892A42328CB825 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testing/Pods-testing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CBA0CE8F2AB8A1CC86629428 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -5,38 +5,69 @@ inhibit_all_warnings!
 install! 'cocoapods', :deterministic_uuids => false, :disable_input_output_paths => true
 
 # Uncomment this line to define a global platform for your project
-platform :ios, '10'
+deployment_target = '10.0'
+platform :ios, deployment_target
 
 # Specifies cocoapods to create dynamic frameworks for the pods.
-use_frameworks!
+use_modular_headers!
+
+def react_modules
+  #  RN defaults
+  
+  # Relative path to the react native nod modules folder from this file.
+  react_native_path = '../../node_modules/react-native'
+  
+  # React Core
+  pod 'React', :path => "#{react_native_path}"
+  pod 'React-Core', :path => "#{react_native_path}"
+  pod 'React-CoreModules', :path => "#{react_native_path}/React/CoreModules"
+  pod 'React-Core/DevSupport', :path => "#{react_native_path}"
+  pod 'React-Core/RCTWebSocket', :path => "#{react_native_path}"
+  
+  # React Common
+  react_common_path = "#{react_native_path}/ReactCommon"
+  pod 'React-cxxreact', :path => "#{react_common_path}/cxxreact"
+  pod 'React-jsi', :path => "#{react_common_path}/jsi"
+  pod 'React-jsiexecutor', :path => "#{react_common_path}/jsiexecutor"
+  pod 'React-jsinspector', :path => "#{react_common_path}/jsinspector"
+  pod 'ReactCommon/jscallinvoker', :path => "#{react_common_path}"
+  pod 'ReactCommon/turbomodule/core', :path => "#{react_common_path}"
+  pod 'Yoga', :path => "#{react_common_path}/yoga"
+  
+  # Libraries
+  react_libraries_path = "#{react_native_path}/Libraries"
+  pod 'React-RCTActionSheet', :path => "#{react_libraries_path}/ActionSheetIOS"
+  pod 'React-RCTAnimation', :path => "#{react_libraries_path}/NativeAnimation"
+  pod 'React-RCTBlob', :path => "#{react_libraries_path}/Blob"
+  pod 'React-RCTImage', :path => "#{react_libraries_path}/Image"
+  pod 'React-RCTLinking', :path => "#{react_libraries_path}/LinkingIOS"
+  pod 'React-RCTNetwork', :path => "#{react_libraries_path}/Network"
+  pod 'React-RCTSettings', :path => "#{react_libraries_path}/Settings"
+  pod 'React-RCTText', :path => "#{react_libraries_path}/Text"
+  pod 'React-RCTVibration', :path => "#{react_libraries_path}/Vibration"
+  pod 'FBLazyVector', :path => "#{react_libraries_path}/FBLazyVector"
+  pod 'FBReactNativeSpec', :path => "#{react_libraries_path}/FBReactNativeSpec"
+  pod 'RCTRequired', :path => "#{react_libraries_path}/RCTRequired"
+  pod 'RCTTypeSafety', :path => "#{react_libraries_path}/TypeSafety"
+  
+  # Third Party
+  react_third_party_path = "#{react_native_path}/third-party-podspecs"
+  pod 'DoubleConversion', :podspec => "#{react_third_party_path}/DoubleConversion.podspec"
+  pod 'glog', :podspec => "#{react_third_party_path}/glog.podspec", :modular_headers => false
+  pod 'Folly', :podspec => "#{react_third_party_path}/Folly.podspec", :modular_headers => false
+  # RN defaults end ------
+end
 
 target 'testing' do
   
-  react_native_path = "../../node_modules/react-native"
-  pod 'React', :path => "#{react_native_path}", :modular_headers => true, :subspecs => [
-    'Core',
-    'CxxBridge', # Include this for RN >= 0.47
-    'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
-    'RCTText',
-    'RCTNetwork',
-    'RCTWebSocket', # Needed for debugging
-    'RCTAnimation', # Needed for FlatList and animations running on native UI thread
-  ]
-
-  pod "yoga", :path => "#{react_native_path}/ReactCommon/yoga"
-
-  # Third party deps podspec link
-  pod 'DoubleConversion', :podspec => "#{react_native_path}/third-party-podspecs/DoubleConversion.podspec"
-  pod 'glog', :podspec => "#{react_native_path}/third-party-podspecs/glog.podspec"
-  pod 'Folly', :podspec => "#{react_native_path}/third-party-podspecs/Folly.podspec"
+  react_modules
   
   pod 'RNImmediatePhoneCall', :path => "../../", :inhibit_warnings => false
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|
-        config.build_settings['GCC_TREAT_WARNINGS_AS_ERRORS'] = 'NO'
-        config.build_settings['GCC_WARN_64_TO_32_BIT_CONVERSION'] = 'NO'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = deployment_target
       end
     end
   end
