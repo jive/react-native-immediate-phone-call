@@ -26,23 +26,14 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4FAA010A22AEF13E005DC98E"
-            BuildableName = "testing.app"
-            BlueprintName = "testing"
-            ReferencedContainer = "container:testing.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1004221BBCDE254BCEB952710BA91CA"
-            BuildableName = "RNImmediatePhoneCall.framework"
+            BuildableName = "libRNImmediatePhoneCall.a"
             BlueprintName = "RNImmediatePhoneCall"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
@@ -59,6 +50,17 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4FAA010A22AEF13E005DC98E"
+            BuildableName = "testing.app"
+            BlueprintName = "testing"
+            ReferencedContainer = "container:testing.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -80,6 +82,8 @@
             ReferencedContainer = "container:testing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
