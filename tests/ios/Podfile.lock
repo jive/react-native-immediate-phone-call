@@ -63,11 +63,11 @@ DEPENDENCIES:
   - React/RCTNetwork (from `../../node_modules/react-native`)
   - React/RCTText (from `../../node_modules/react-native`)
   - React/RCTWebSocket (from `../../node_modules/react-native`)
-  - RNImmediatePhoneCall (from `../../ios`)
+  - RNImmediatePhoneCall (from `../../`)
   - yoga (from `../../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
@@ -80,7 +80,7 @@ EXTERNAL SOURCES:
   React:
     :path: "../../node_modules/react-native"
   RNImmediatePhoneCall:
-    :path: "../../ios"
+    :path: "../../"
   yoga:
     :path: "../../node_modules/react-native/ReactCommon/yoga"
 
@@ -90,9 +90,9 @@ SPEC CHECKSUMS:
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   React: 36d0768f9e93be2473b37e7fa64f92c1d5341eef
-  RNImmediatePhoneCall: ec4a5a18449dcedbb293436d21d26a41bc8a5128
+  RNImmediatePhoneCall: b288f5b3ec6a8259a1c7d82acd3e3228ca498b33
   yoga: 684513b14b03201579ba3cee20218c9d1298b0cc
 
-PODFILE CHECKSUM: 13a8d7c7eddfbabe788fddd6bf31d332490f2d7a
+PODFILE CHECKSUM: 98523e5bc491debce76136102f1f5580fa7568cb
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

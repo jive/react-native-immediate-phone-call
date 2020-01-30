@@ -27,8 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F2CB70B23E3481A00804A90 /* RNImmediatePhoneCall.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = RNImmediatePhoneCall.podspec; path = ../../RNImmediatePhoneCall.podspec; sourceTree = "<group>"; };
 		4F4D18DB234292A0000871DE /* RNImmediatePhoneCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNImmediatePhoneCall.m; sourceTree = "<group>"; };
-		4F4D18DC23429366000871DE /* RNImmediatePhoneCall.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = RNImmediatePhoneCall.podspec; path = ../../ios/RNImmediatePhoneCall.podspec; sourceTree = "<group>"; };
 		4FAA010B22AEF13E005DC98E /* testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAA010E22AEF13E005DC98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FAA011022AEF13E005DC98E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		4FAA010222AEF13D005DC98E = {
 			isa = PBXGroup;
 			children = (
-				4F4D18DC23429366000871DE /* RNImmediatePhoneCall.podspec */,
+				4F2CB70B23E3481A00804A90 /* RNImmediatePhoneCall.podspec */,
 				4F4D18DA234292A0000871DE /* RNImmediatePhoneCall */,
 				4FAA010D22AEF13E005DC98E /* testing */,
 				4FAA012222AEF140005DC98E /* testingTests */,

@@ -30,7 +30,7 @@ target 'testing' do
   pod 'glog', :podspec => "#{react_native_path}/third-party-podspecs/glog.podspec"
   pod 'Folly', :podspec => "#{react_native_path}/third-party-podspecs/Folly.podspec"
   
-  pod 'RNImmediatePhoneCall', :path => "../../ios", :inhibit_warnings => false
+  pod 'RNImmediatePhoneCall', :path => "../../", :inhibit_warnings => false
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
