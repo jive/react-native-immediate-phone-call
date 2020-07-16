@@ -51,4 +51,45 @@ RCT_EXPORT_METHOD(canCall:(RCTPromiseResolveBlock _Nonnull)resolve rejecter:(RCT
     resolve(@YES);
 };
 
+RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(canCall)
+{
+  __block NSNumber *canCall = false;
+  
+  dispatch_sync(dispatch_get_main_queue(), ^{
+    UIApplication *application = RCTSharedApplication();
+    if (application == nil) {
+      return ;
+    }
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", @"//"]];
+    if ([application canOpenURL:url] == false) {
+      return ;
+    }
+    
+    canCall = @YES;
+    return ;
+  });
+  
+  return canCall;
+};
+
+RCT_EXPORT_METHOD(canCallAsync:(RCTPromiseResolveBlock _Nonnull)resolve rejecter:(RCTPromiseRejectBlock _Nonnull)reject)
+{
+  dispatch_async(dispatch_get_main_queue(), ^{
+    UIApplication *application = RCTSharedApplication();
+    if (application == nil) {
+      reject(@"OPEN_URL_NOT_AVAILABLE_IN_EXTENSION", @"does not support open url from app extension", nil);
+      return;
+    }
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", @"//"]];
+    if ([application canOpenURL:url] == false) {
+      resolve(@NO);
+      return;
+    }
+    
+    resolve(@YES);
+  });
+};
+
 @end
