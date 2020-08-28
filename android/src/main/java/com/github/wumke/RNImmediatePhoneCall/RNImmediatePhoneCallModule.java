@@ -51,9 +51,4 @@ public class RNImmediatePhoneCallModule extends ReactContextBaseJavaModule {
             promise.reject(new JSApplicationIllegalArgumentException("Could not open URL '" + url + "': " + e.getMessage()));
         }
     }
-
-    @ReactMethod
-    public void canCall(Promise promise) {
-        promise.resolve(getReactApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY));
-    }
 }
